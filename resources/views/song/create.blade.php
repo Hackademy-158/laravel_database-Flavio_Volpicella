@@ -22,7 +22,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Descrizione</label>
-                                <textarea name="descrtiption" class="form-control" id="description"></textarea>
+                                <textarea name="description" class="form-control" id="description"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Inserisci</button>
                         </form>
