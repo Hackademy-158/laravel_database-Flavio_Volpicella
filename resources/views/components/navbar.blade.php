@@ -15,7 +15,7 @@
                     <a class="nav-link" href="{{route('song.create')}}">Inserisci canzoni</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    <a class="nav-link " href=" {{route('song.index')}}" aria-disabled="true">Le tue canzoni</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
