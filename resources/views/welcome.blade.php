@@ -10,7 +10,7 @@
             </div>
         </div>
     @endif
-    <section>
+    <section class="">
 
     </section>
 
