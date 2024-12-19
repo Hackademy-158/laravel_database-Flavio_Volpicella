@@ -26,7 +26,7 @@ class StoreSongRequest extends FormRequest
             'artist' => 'required|min:3|max:20',
             'album' => 'required|min:3|max:20',
             'description' => 'required|min:10|max:500',
-            'cover' => 'required|mimes:jpg,jpeg,png,gif',
+            // 'cover' => 'required|mimes:jpg,jpeg,png,gif',
         ];
     }
 
@@ -41,8 +41,6 @@ class StoreSongRequest extends FormRequest
         'album.min' => "Il campo dell' album deve contenere almeno 3 caratteri",
         'description.required' => 'Il campo della descrizione è obbligatorio',
         'description.min' => "Il campo della descrizione deve contenere almeno 10 caratteri",
-        'cover.required' => "Il campo della copertina è obbligatorio.",
-        'cover.image' => "Il campo della copertina deve essere un file."
 
 
     ];

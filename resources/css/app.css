@@ -1,1 +1,408 @@
-@import 'bootstrap'
+@import 'bootstrap';
+
+
+:root {
+    --color-red: #ff0000;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-green: #008000;
+    --color-aqua: #00ffff;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px;
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(0, 0, 0, 0.822) !important;
+}
+
+.rounded {
+    border-radius: 0 !important;
+}
+
+.spotify-search {
+    display: flex !important;
+    /* position: absolute; */
+    background-color: #282828;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+}
+
+.spotify-search input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    flex: 1;
+    margin-right: 10px;
+
+}
+
+.spotify-search input::placeholder {
+    color: #b3b3b3;
+}
+
+.spotify-search button {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.spotify-search button:hover {
+    color: #d14f4f;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: #d14f4f;
+    background-color: #d14f4f;
+    transform: scale(1.1);
+
+}
+
+.nav-link.active {
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 2px solid #d14f4f;
+}
+
+.nav-link:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px #d14f4f;
+}
+
+.house:hover {
+    color: #d14f4f;
+}
+
+.spotify-search a i {
+    color: #ffffff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.spotify-search a i:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+body {
+    background-image: linear-gradient(rgba(15, 15, 15, 0.521), rgba(236, 130, 130, 0.13)), url('/public/image/imgwelcome.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+
+
+
+/* Impostazioni di base */
+/* body {
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+} */
+
+/* Form Container */
+/* Colore di background personalizzato per il form */
+.bg-custom {
+    background-color: #f8f9fa;
+    /* Un colore chiaro (grigio chiaro) per lo sfondo */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Stile del bordo e del form */
+.formStyle {
+    background-color: #0c0c0c85;
+    /* Colore bianco per il form */
+    border: 1px solid #dddddd3d;
+    /* Bordo chiaro per il form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Leggera ombra per profondità */
+}
+
+/* Pulsante personalizzato */
+.btn-primary {
+    background-color: #e9300f;
+    /* Colore rosa chiaro per il pulsante */
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d14f4f;
+    /* Colore rosso scuro per il hover */
+}
+
+
+/* Adattamento responsive per form */
+@media (max-width: 768px) {
+    .col-md-6 {
+        max-width: 100%;
+    }
+}
+
+/* Stile per l'elemento h1 */
+.TitleForm {
+    font-family: 'Arial', sans-serif;
+    /* Font moderno e leggibile */
+    font-size: 3rem;
+    /* Dimensione del font */
+    font-weight: bold;
+    /* Grassetto per evidenziare il titolo */
+    text-align: center;
+    /* Allineamento al centro */
+    background: linear-gradient(to right, #ff0505, #ff0000);
+    /* Gradiente da rosa a rosso */
+    -webkit-background-clip: text;
+    /* Applica il gradiente solo al testo */
+    color: transparent;
+    /* Colore trasparente per far vedere il gradiente */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* Leggera ombra per un effetto di profondità */
+    margin-top: 50px;
+    /* Spazio sopra il titolo */
+    margin-bottom: 30px;
+    /* Spazio sotto il titolo */
+}
+
+/* Stile di base per il form-control */
+.form-control {
+    background-color: rgba(255, 0, 0, 0.082);
+    /* Sfondo rosso trasparente */
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    /* Bordo più scuro */
+    color: #ffffff;
+    /* Testo bianco */
+    transition: all 0.3s ease;
+    /* Transizione fluida */
+}
+
+/* Placeholder: testo iniziale nei campi input */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    /* Testo bianco leggermente trasparente */
+    opacity: 1;
+    /* Garantisce che non dipenda dal browser */
+}
+
+/* Testo inserito dall'utente */
+.form-control {
+    color: #ffffff;
+    /* Testo bianco */
+}
+
+/* Hover */
+.form-control:hover {
+    background-color: rgba(255, 0, 0, 0.15);
+    border-color: rgba(255, 0, 0, 0.6);
+}
+
+/* Focus */
+.form-control:focus {
+    background-color: rgba(255, 0, 0, 0.2);
+    border-color: #ff4d4d;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 77, 77, 0.5);
+    color: #ffffff;
+    /* Mantieni il testo bianco in focus */
+}
+
+/* Active */
+.form-control:active {
+    background-color: rgba(255, 0, 0, 0.25);
+    border-color: #e63946;
+    color: #ffffff;
+    /* Testo bianco anche in active */
+}
+
+
+
+
+
+
+/* Container principale della card */
+.custom-card {
+    background: #ffffff;
+    /* Sfondo bianco */
+    border: none;
+    /* Rimuove il bordo */
+    border-radius: 15px;
+    /* Angoli arrotondati */
+    overflow: hidden;
+    /* Nasconde il contenuto fuori dalla card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animazione fluida */
+}
+
+/* Effetto hover per sollevare la card */
+.custom-card:hover {
+    transform: translateY(-10px);
+    /* Solleva la card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Aggiunge ombra */
+}
+
+/* Contenitore immagine */
+.card-img-container {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Effetto zoom sull'immagine */
+.card-img-container img {
+    transition: transform 0.5s ease;
+}
+
+.card-img-container:hover img {
+    transform: scale(1.1);
+    /* Zoom immagine */
+}
+
+/* Stile del titolo */
+.card-title {
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Testo della card */
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Pulsante */
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+
+
+.translate-middle-x {
+    transform: translateX(-68%) !important;
+}
+
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    background-color: #d14f4f;
+    transform: scale(1.1);
+}
+
+
+
+/* Media query per schermi piccoli (max-width: 576px) */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 5px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .spotify-search {
+        display: none !important;
+        /* Nasconde la barra di ricerca su schermi molto piccoli */
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+/* Media query per schermi medi (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .spotify-search {
+        margin-top: 10px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        max-width: 100%;
+        margin-left: 22px;
+    }
+}
+
+
+
+/* Personalizzazioni generali */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    color: #ff4500;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
