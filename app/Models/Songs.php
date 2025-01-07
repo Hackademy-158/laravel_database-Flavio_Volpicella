@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Songs extends Model
 {
-    protected $fillable = ['title', 'artist', 'album', 'description', 'cover'];
+    protected $fillable = ['title', 'artist', 'album', 'description', 'cover', 'user_id'];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

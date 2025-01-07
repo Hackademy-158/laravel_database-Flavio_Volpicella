@@ -24,6 +24,7 @@
                             <p class="card-text text-muted">
                                 {{ $songs->description ?? 'Nessuna descrizione disponibile' }}
                             </p>
+                            <p>Inserita da {{ $songs->user->name ?? 'Utente Sconosciuto' }}</p>
                             <a href="#" class="btn btn-outline-danger">Ascolta Ora</a>
                             <form action="{{ route('song.delete', ['song' => $songs]) }}" method="POST">
                                 @csrf

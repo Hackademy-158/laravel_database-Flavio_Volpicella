@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Songs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreSongRequest;
 
 class SongsController extends Controller
@@ -28,6 +29,7 @@ class SongsController extends Controller
             'album' => $request->album,
             'description' => $request->description,
             'cover' => $request->file('cover') ? $request->file('cover')->store('covers', 'public') : 'default/default.png',
+            'user_id' => Auth::user()->id
         ]);
 
         return redirect(route('homepage'))->with('songCreated', 'Canzone inserita con successo');

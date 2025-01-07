@@ -22,6 +22,8 @@
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label text-light">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                        <button type="button" id="togglePassword" class="btn btn-secondary mt-2">Mostra
+                            Password</button>
                     </div>
                     <div class="mb-3">
                         <label for="confermapassword " class="form-label text-light">Conferma password</label>

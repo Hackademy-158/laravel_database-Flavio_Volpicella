@@ -10,10 +10,11 @@
         <div class="collapse navbar-collapse " id="navbarsExample09">
 
             <form role="search" class="spotify-search position-absolute top-10 start-50 translate-middle-x  "><a
-                    href="{{ route('homepage') }}"><i class="fa-solid fa-house pt-1" style= "color: #ffffff;"></i></a>
-                <input type="text" class="px-3" placeholder="Cerca..." />
+                    href="{{ route('homepage') }}"><i class="fa-solid fa-house faSearch pt-1"
+                        style= "color: #ffffff;"></i></a>
+                <input type="text" class="px-3 " placeholder="Cerca..." />
                 <button type="submit">
-                    <i class="fa-solid fa-search"></i>
+                    <i class="fa-solid fa-search "></i>
                 </button>
             </form>
             <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
@@ -34,7 +35,11 @@
                             Ciao, {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"
+                            <li>
+                                <a class="dropdown-item" href="">Profilo utente</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
                             </li>
                             <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">
@@ -44,7 +49,7 @@
                         </ul>
                     </li>
                     @guest
-                        <p class="text-light  m-1 mx-4 ">Ciao, Ospite</p>
+                        <p class="text-light  m-1 mx-4  ">Ciao, Ospite</p>
                     @endguest
                 </ul>
                 <button class="btn btn-danger m-2" href=><a href="{{ route('login') }}">Accedi</a></button>
