@@ -50,9 +50,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Songs::class);
     }
-
-    public function user()
+    public function platforms()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(Platform::class);
     }
 }

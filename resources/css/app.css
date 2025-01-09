@@ -30,13 +30,14 @@
 
 .spotify-search {
     display: flex !important;
-    /* position: absolute; */
+    position: static !important;
     background-color: #282828;
     border-radius: 20px;
     padding: 5px 15px;
     width: 340px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
+    margin-left: 400px;
 }
 
 .spotify-search input {

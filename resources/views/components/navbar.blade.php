@@ -8,7 +8,6 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse " id="navbarsExample09">
-
             <form role="search" class="spotify-search position-absolute top-10 start-50 translate-middle-x  "><a
                     href="{{ route('homepage') }}"><i class="fa-solid fa-house faSearch pt-1"
                         style= "color: #ffffff;"></i></a>
@@ -17,17 +16,25 @@
                     <i class="fa-solid fa-search "></i>
                 </button>
             </form>
-            <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
-                <li class="nav-item ">
-                    <a class="nav-link text-light active" aria-current="page" href="{{ route('homepage') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-light" href="{{ route('song.create') }}">Inserisci canzoni</a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link text-light" href="{{ route('song.index') }}" aria-disabled="true">Le tue
-                        canzoni</a>
-                </li>
+            @auth
+                <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+                    <li class="nav-item ">
+                        <a class="nav-link text-light active" aria-current="page" href="{{ route('homepage') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('song.create') }}">Inserisci canzoni</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-light" href="{{ route('song.index') }}" aria-disabled="true">Le tue
+                            canzoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('platform.create') }}">Inserisci piattaforma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="{{ route('platform.index') }}">Le tue piattaforme</a>
+                    </li>
+                @endauth
                 @auth
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
