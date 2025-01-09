@@ -44,7 +44,10 @@ class SongsController extends Controller
 
     public function destroy(Songs $song)
     {
-        $song->delete();
-        return redirect(route('song.index'))->with('songDelete', 'Canzone eliminata con successo');
+        if (Auth::user()->id == $song->user_id) {
+            $song->delete();
+            return redirect(route('song.index'))->with('songDelete', 'Canzone eliminata con successo');
+            return redirect()->back()->with('denied', 'acesso negato');
+        }
     }
 }
