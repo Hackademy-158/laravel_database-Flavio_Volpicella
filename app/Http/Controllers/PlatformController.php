@@ -35,7 +35,7 @@ class PlatformController extends Controller
             'logo' => $request->file('logo')->store('logos', 'public'),
             'user_id' => Auth::user()->id,
         ]);
-        return redirect()->route('platform.index')->with('success', 'Platform inserita correttamente');
+        return redirect()->route('platform.index')->with('success', 'Piattaforma inserita correttamente');
     }
 
     /**
@@ -67,6 +67,11 @@ class PlatformController extends Controller
      */
     public function destroy(Platform $platform)
     {
-        //
+        if (Auth::user()->id == $platform->user_id) {
+            $platform->delete();
+            return redirect()->route('platform.index')->with('success', 'Piattaforma eliminata correttamente');
+        } else {
+            return redirect()->route('platform.index')->with('error', 'Non hai i permessi per eliminare questa piattaforma');
+        }
     }
 }

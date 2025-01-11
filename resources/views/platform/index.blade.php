@@ -1,4 +1,13 @@
 <x-layout>
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @elseif (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -17,8 +26,13 @@
                                     alt="cover">
                                 <div class="card-body text-center">
                                     <h5 class="card-title text-uppercase">{{ $platform->name }}</h5>
-                                    <p class="card-text text-muted">Inserita da:{{ $platform->user->name }}</p>
+                                    <p>Inserita da:{{ $platform->user->name }}</p>
                                 </div>
+                                <form action="{{ route('platform.delete', ['platform' => $platform]) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-outline-danger m-2 ">Elimina</button>
+                                </form>
                             </div>
                         </div>
                     </div>

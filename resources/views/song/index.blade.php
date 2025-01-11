@@ -1,7 +1,21 @@
 <x-layout>
-    @if (session('songDelete'))
+    @if (session('songCreated'))
+        <div class="container">
+            <div class="row">
+                <div class="col-12 justify-content-center d-flex align-items-center">
+                    <div class="alert alert-success ">
+                        {{ session('songCreated') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    @elseif (session('songDelete'))
         <div class="alert alert-success">
             {{ session('songDelete') }}
+        </div>
+    @elseif (session('songDeleteError'))
+        <div class="alert alert-danger">
+            {{ session('songDeleteError') }}
         </div>
     @endif
     <div class="container my-5">

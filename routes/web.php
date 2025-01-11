@@ -15,3 +15,4 @@ Route::delete('/song/delete/{song}', [SongsController::class, 'destroy'])->name(
 Route::get('/platform/index', [PlatformController::class, 'index'])->name('platform.index');
 Route::get('/platform/create', [PlatformController::class, 'create'])->name('platform.create');
 Route::post('/platform/store', [PlatformController::class, 'store'])->name('platform.store');
+Route::delete('/platform/delete/{platform}', [PlatformController::class, 'destroy'])->name('platform.delete');

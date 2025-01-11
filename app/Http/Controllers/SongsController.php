@@ -32,7 +32,7 @@ class SongsController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-        return redirect(route('homepage'))->with('songCreated', 'Canzone inserita con successo');
+        return redirect(route('song.index'))->with('songCreated', 'Canzone inserita con successo');
     }
 
 
@@ -47,7 +47,8 @@ class SongsController extends Controller
         if (Auth::user()->id == $song->user_id) {
             $song->delete();
             return redirect(route('song.index'))->with('songDelete', 'Canzone eliminata con successo');
-            return redirect()->back()->with('denied', 'acesso negato');
+        } else {
+            return redirect(route('song.index'))->with('songDeleteError', 'Non hai i permessi per eliminare questa canzone');
         }
     }
 }
